@@ -1,0 +1,17 @@
+# tests/14_json.nv
+
+print("--- NovaScript v5.5.5: JSON Parsing & Stringify ---")
+
+let user = {
+    name = "Raj",
+    age = 25,
+    roles = ["admin", "dev"]
+}
+
+print("Stringifying user object:")
+let jsonStr = JSON.stringify(user)
+print(jsonStr)
+
+if (jsonStr isnt "") {
+    print("JSON.stringify: SUCCESS")
+}

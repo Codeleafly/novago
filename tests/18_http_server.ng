@@ -1,0 +1,22 @@
+# tests/18_http_server.ng
+
+print("--- NovaGo v5.5.5: HTTP Server Module ---")
+
+fn handleGet(req, res) {
+    print("Received GET request at /")
+    res.send("Hello from NovaGo Server!")
+}
+
+fn handlePost(req, res) {
+    print("Received POST request at /echo")
+    print("Request body:", req.body)
+    res.send("Echo: " + req.body)
+}
+
+let server = HTTP.createServer()
+
+server.get("/", handleGet)
+server.post("/echo", handlePost)
+
+print("Starting server on port 3000...")
+server.listen(3000)

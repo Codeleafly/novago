@@ -1,0 +1,1 @@
+try { throw "Something went wrong!"; } catch (e) { print("Caught:", e); } finally { print("Cleanup done."); }

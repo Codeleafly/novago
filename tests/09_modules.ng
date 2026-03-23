@@ -1,0 +1,14 @@
+# tests/09_modules.ng
+
+print("--- NovaGo v5.5.5: Module Include Tests ---")
+
+# Include the library file
+let myMod = include("./09_lib.ng")
+
+print("Accessing lib_name from module:", myMod.lib_name)
+let res = myMod.lib_multiply(5, 5)
+print("Using lib_multiply(5, 5):", res)
+
+if (res is 25 and myMod.lib_name is "MathHelper") {
+    print("Module include and cross-file access: SUCCESS")
+}
